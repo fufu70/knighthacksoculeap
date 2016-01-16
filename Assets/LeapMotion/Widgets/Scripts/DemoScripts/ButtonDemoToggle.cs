@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using LMWidgets;
 
@@ -18,6 +19,7 @@ public class ButtonDemoToggle : ButtonToggleBase
   public override void ButtonTurnsOn()
   {
     TurnsOnGraphics();
+	SceneManager.LoadScene (1);
   }
 
   public override void ButtonTurnsOff()

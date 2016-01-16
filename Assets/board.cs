@@ -126,7 +126,7 @@ public class board : MonoBehaviour {
 		}
 	}
 
-	public GameObject ToCartesian(Vector3 position) {
+	public void ToCartesian(Vector3 position) {
 		float radius = (float)(this.width / (Math.PI * 2));
 		float longitude = position.x / radius;
 		float latitude = (float) (2 * Math.Atan(Math.Exp(position.y / radius)) - (Math.PI / 2));
@@ -138,7 +138,7 @@ public class board : MonoBehaviour {
 		position.z = z;
 		position.x = x;
 		position.y = y;
-		return (GameObject) Instantiate (vein_element, position, Quaternion.identity);
+		Instantiate (vein_element, position, Quaternion.identity);
 	}
 
 	// Update is called once per frame
