@@ -15,6 +15,7 @@ public class board : MonoBehaviour {
 	private System.Random randomGen;
 
 	public GameObject vein_element;
+	public GameObject cube_element;
 	public Renderer rend;
 
 	// Use this for initialization
@@ -49,6 +50,16 @@ public class board : MonoBehaviour {
 		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
 
 		// top right
+		l_position = new Vector3 ( this.width / 2,this.height / 2,this.transform.position.z);
+		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
+
+		// bottom right
+		l_position = new Vector3 ((this.width / 2),-(this.height / 2),this.transform.position.z);
+		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
+
+		// bottom left
+		l_position = new Vector3 (- (this.width / 2),-(this.height / 2),this.transform.position.z);
+		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
 	}
 
 	public void PlaceRandomVenation() {
@@ -106,20 +117,26 @@ public class board : MonoBehaviour {
 		}
 
 		foreach (Vector3 l_position in add_vector) {
-			this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
+			this.vein_element_list.Add(Instantiate (cube_element, l_position, Quaternion.identity));
+			Renderer sph_rend = ((GameObject)this.vein_element_list [this.vein_element_list.Count - 1]).GetComponent<Renderer> ();
+			sph_rend.enabled = false;
 			this.ToCartesian (l_position);
 		}
 	}
 
-	public void ToCartesian(Vector3 position) {
-		float x = (float)(Math.Cos (position.x) * Math.Sin (position.y) * position.z);
-		float y = (float)(Math.Sin (position.x) * Math.Sin (position.y) * position.z);
-		float z = (float)(Math.Cos (position.y) * position.z);
+	public GameObject ToCartesian(Vector3 position) {
+		float radius = (float)(this.width / (Math.PI * 2));
+		float longitude = position.x / radius;
+		float latitude = (float) (2 * Math.Atan(Math.Exp(position.y / radius)) - (Math.PI / 2));
 
-		position.z = x;
-		position.x = y;
-		position.y = z;
-		Instantiate (vein_element, position, Quaternion.identity);
+		float x = (float) (radius * Math.Cos (latitude) * Math.Cos (longitude));
+		float y = (float) (radius * Math.Cos (latitude) * Math.Sin (longitude));
+		float z = (float) (radius * Math.Sin (latitude));
+
+		position.z = z;
+		position.x = x;
+		position.y = y;
+		return (GameObject) Instantiate (vein_element, position, Quaternion.identity);
 	}
 
 	// Update is called once per frame
