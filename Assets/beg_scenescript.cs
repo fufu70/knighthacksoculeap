@@ -11,14 +11,17 @@ public class beg_scenescript : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
+		move = false;
 		rb = GetComponent<Rigidbody> ();
-		Invoke ("startGame", 5);
+		Invoke ("startGame", 10);
 	}
 
 	public void Update()
 	{
 		if (move && transform.position.y < 0) {
-			transform.Translate (new Vector3 (0f, 1f, 0f));
+			transform.position = Vector3.MoveTowards (transform.position, new Vector3 (0f, 0f, 2.53f), 1f);
+		} else if(move && transform.position.y >= 0){
+			Borde.SetActive (true);
 		}
 	}
 
@@ -26,6 +29,5 @@ public class beg_scenescript : MonoBehaviour {
 		canvas.SetActive (false);
 		move = true;
 		Debug.Log ("start");
-		Borde.SetActive (true);
 	}
 }

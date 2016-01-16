@@ -75,6 +75,7 @@
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\LeapMotion\Version.txt" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
+     <None Include="Assets\did_you_know.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
