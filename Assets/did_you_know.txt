@@ -1,0 +1,20 @@
+Did you know:
+
+Simulation-based visual modeling of patterns found in living organisms
+has a long history, bridging biology, theoretical studies of
+morphogenesis, and computer graphics.
+
+
+
+This Virtual reality simulation mainly focus' on the modeling of venation pattern in leaves. 
+
+
+Together with spiral phyllotaxis and the branching structures of tree architecture, venation patterns are among the most admirable aspects of the natural beauty of plants. 
+
+
+Venation patterns are strongly correlated with leaf shapes, in the simulation the leaf shape is represented as a prefect square to wrap around a sphere using Mercator projection.
+
+
+The algorithm used is based on the biologically plausible hypothesis
+that venation results from an feedback loop between leaf growth,
+placement of auxin sources, and the development of veins.
