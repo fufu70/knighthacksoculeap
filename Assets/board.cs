@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class board : MonoBehaviour {
 
+	public const int MAX = 5000;
+
 	private ArrayList vein_element_list;
 	private ArrayList venation_element_list;
 	private Dictionary<GameObject, ArrayList> connection_list;
@@ -141,15 +143,17 @@ public class board : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Update () {
-		this.venation_element_list = new ArrayList ();
-		this.connection_list = new Dictionary<GameObject, ArrayList> ();
-		this.normalized_connection_list = new Dictionary<GameObject, Vector3> ();
-		for (int i = 0; i < 10; i++) {
-			this.PlaceRandomVenation ();
+		if (vein_element_list.Count < MAX) {
+			this.venation_element_list = new ArrayList ();
+			this.connection_list = new Dictionary<GameObject, ArrayList> ();
+			this.normalized_connection_list = new Dictionary<GameObject, Vector3> ();
+			for (int i = 0; i < 10; i++) {
+				this.PlaceRandomVenation ();
+			}
+			this.SetupConnectionList ();
+			this.NormalizeConnectionList ();
+			this.AddNormalizedConnectionList ();	
 		}
-		this.SetupConnectionList ();
-		this.NormalizeConnectionList ();
-		this.AddNormalizedConnectionList ();
 	}
 
 	public float GetRandom() {
