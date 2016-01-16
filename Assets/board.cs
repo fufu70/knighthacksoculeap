@@ -49,16 +49,6 @@ public class board : MonoBehaviour {
 		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
 
 		// top right
-		l_position = new Vector3 ( this.width / 2,this.height / 2,this.transform.position.z);
-		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
-
-		// bottom right
-		l_position = new Vector3 ((this.width / 2),-(this.height / 2),this.transform.position.z);
-		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
-
-		// bottom left
-		l_position = new Vector3 (- (this.width / 2),-(this.height / 2),this.transform.position.z);
-		this.vein_element_list.Add(Instantiate (vein_element, l_position, Quaternion.identity));
 	}
 
 	public void PlaceRandomVenation() {

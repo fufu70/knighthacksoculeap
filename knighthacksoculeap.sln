@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7DB1B568-F1C6-F171-C570-13796E849A2B}") = "knighthacksoculeap", "Assembly-CSharp.csproj", "{FBA2F50D-7060-0BEA-48B5-0BFEB365ED87}"
+EndProject
+Project("{7DB1B568-F1C6-F171-C570-13796E849A2B}") = "knighthacksoculeap", "Assembly-CSharp-Editor.csproj", "{5AF46924-5AAC-802C-6C4D-A170D8FF1C78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBA2F50D-7060-0BEA-48B5-0BFEB365ED87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA2F50D-7060-0BEA-48B5-0BFEB365ED87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA2F50D-7060-0BEA-48B5-0BFEB365ED87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA2F50D-7060-0BEA-48B5-0BFEB365ED87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF46924-5AAC-802C-6C4D-A170D8FF1C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF46924-5AAC-802C-6C4D-A170D8FF1C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF46924-5AAC-802C-6C4D-A170D8FF1C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF46924-5AAC-802C-6C4D-A170D8FF1C78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
